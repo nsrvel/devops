@@ -1,0 +1,12 @@
+version: "3.6"
+
+services:
+  redis:
+    container_name: redis
+    image: redis:6.2.7
+    restart: always
+    volumes:
+      - ./redis.conf:/redis.conf:ro
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "/redis.conf"]
